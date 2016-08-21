@@ -17,5 +17,8 @@ module.exports = function () {
             done(err, user);
         });
     });
-    require('./strategies/local.js')();
+    // require('./strategies/local.js')();
+    require('./strategies/local-http-bearer.js')();
+    require('./strategies/local-login.js')();
+    require('./strategies/local-signup.js')();
 };

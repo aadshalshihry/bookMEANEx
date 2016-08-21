@@ -31,8 +31,21 @@ var UserSchema = new Schema({
 	}, 
 	salt: {
 		type: String
+	},
+	admin: {
+		type: Boolean,
+		default: false
 	}
 }); 
+
+UserSchema.virtual('fullName').get(function() {
+	return this.firstName + " " + this.lastName;
+}).set(function(fullName) {
+	var splitName = fullName.split(' ');
+	this.firstName = splitName[0] || '';
+	this.lastName = splitName[1] || '';
+
+});
 
 // Use a pre-save middleware to hash the password
 UserSchema.pre('save', function(next) {
