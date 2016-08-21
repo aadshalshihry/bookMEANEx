@@ -1,0 +1,17 @@
+{
+  "name": "web1",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Roman Alshehri <aalshehri08@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/aadshalshihry/web1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -8,6 +8,7 @@
   "dependencies": {
     "body-parser": "~1.15.1",
     "compression": "^1.6.2",
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^1.3.2",
     "cookie-parser": "~1.4.3",
     "crypto": "0.0.3",
@@ -20,6 +21,7 @@
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.8.0",
     "passport": "^0.3.2",
+    "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0"
   }

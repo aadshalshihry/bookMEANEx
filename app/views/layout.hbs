@@ -2,9 +2,21 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    {{{body}}}
+    <div class="container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        {{# if user}}
+          <li><a href="/signout">Sign out</a></li>
+        {{else}}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        {{/if}}
+      </ul>
+    	{{{body}}}
+    </div>
   </body>
 </html>

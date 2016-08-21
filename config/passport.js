@@ -19,6 +19,6 @@ module.exports = function () {
     });
     // require('./strategies/local.js')();
     require('./strategies/local-http-bearer.js')();
-    require('./strategies/local-login.js')();
+    require('./strategies/local-signin.js')();
     require('./strategies/local-signup.js')();
 };

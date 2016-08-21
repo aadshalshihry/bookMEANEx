@@ -6,9 +6,9 @@ var passport = require('passport'),
 
 
 module.exports = function () {
-    passport.use('local-login', new LocalStrategy({
-            usernameField: 'username',
-            passwordField: 'password',
+    passport.use('local-signin', new LocalStrategy({
+            // usernameField: 'username',
+            // passwordField: 'password',
             passReqToCallback: true
         },
         function(req, username, password, done) {
@@ -16,7 +16,7 @@ module.exports = function () {
                 User.findOne({ 'username' : username }, function (err, user) {
                     if (err) { return done(err); }
                     if (!user) { return done(null, false, req.flash('signinMessage', 'user name is not exists')); }
-                    if (!user.validPassword(password))
+                    if (!user.authenticate(password))
                     // if (user.local.password !== password)
                         return done(null, false, req.flash('signinMessage', "Invalid password"));
                     return done(null, user);

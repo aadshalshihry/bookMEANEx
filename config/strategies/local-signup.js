@@ -1,16 +1,12 @@
 'use strict';
 
-var passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy,
-    User = require('../../app/models/user.server.model');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var User = require('../../app/models/user.server.model');
 
 
 module.exports = function () {
     passport.use('local-signup', new LocalStrategy({
-            // fNameField:    'fName',
-            // lNameField:    'lName',
-            // usernameField: 'username',
-            // passwordField: 'password',
             passReqToCallback: true
         },
         function(req, username, password, done){
@@ -18,16 +14,20 @@ module.exports = function () {
                 User.findOne({'username': username}, function(err, user){
                     if(err)
                         return done(err);
-                    if(user){
+                    else if(user){
                         return done(null, false, req.flash('signupMessage', 'That email already taken'));
-                    }
-                    var newUser = new User();
-                    newUser = req.body;
-                    newUser.save(function(err){
+                    } else {
+                        var newUser = new User(req.body);
+                        // newUser = req.body;
+                        if(req.body.admin){
+                            newUser.admin = true;
+                        }
+                        newUser.save(function(err){
                         if(err)
                             throw err;
-                        return done(null, newUser);
-                    });
+                            return done(null, newUser);
+                        });
+                    }
                 });
 
             });
