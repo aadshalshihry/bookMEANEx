@@ -19,6 +19,7 @@ module.exports = function () {
                     } else {
                         var newUser = new User(req.body);
                         // newUser = req.body;
+                        
                         if(req.body.admin){
                             newUser.admin = true;
                         }
