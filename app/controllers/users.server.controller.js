@@ -56,8 +56,15 @@ exports.userById = function(req, res, next, id) {
 		if (err) {
 			return next(err);
 		}
-		if(!user) return next(newError('Failed to load user ' + id));
+		if(!user) return next(new Error('Failed to load user ' + id));
 		req.user = user;
-		next()
+		next();
 	});
+};
+
+exports.isUserAdmin = function(req, res, next) {
+	if(req.user.admin){
+		return  next();
+	}
+	res.redirect('/');
 };
