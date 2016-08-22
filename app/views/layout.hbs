@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="web1">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
+    <base href="/">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
+  <body ng-app="users">
     <div class="container">
       <ul>
         <li><a href="/">Home</a></li>
@@ -21,5 +23,14 @@
       {{/if}}
     	{{{body}}}
     </div>
+
+
+  <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/lib/angular/angular.js"></script>
+  <script type="text/javascript" src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+  <script type="text/javascript" src="/angular/users.client.module.js"></script>
+
   </body>
 </html>

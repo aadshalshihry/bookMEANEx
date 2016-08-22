@@ -1,3 +1,11 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
+<div class="name1" ng-controller="userCtrl">
+	<p>Name : <input type="text" ng-model="n"></p>
+	<h1>Hello {[{n}]}</h1>	
+	<h1>Hello {[{name}]}</h1>	
+</div>
+<hr>
+<ui-view></ui-view>
+
