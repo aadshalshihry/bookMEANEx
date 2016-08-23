@@ -3,11 +3,11 @@
 var user = require('../controllers/users.server.controller');
 
 module.exports = function(app) {
-	app.route('/users')
+	app.route('/api/users')
 		.get(user.list)
 		.post(user.create);
 
-	app.route('/users/:userId')
+	app.route('/api/users/:userId')
 		.get(user.view)
 		.put(user.update)
 		.delete(user.delete);
