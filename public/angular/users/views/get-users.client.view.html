@@ -1,0 +1,16 @@
+<section data-ng-controller="UsersController" data-ng-init="find()">
+	<h1>Users</h1>
+
+	<ul>
+		<li data-ng-repeat="user in users">	
+			<h2><a ui-sref="getUser({userId: '{[{user._id}]}'})">
+				 
+				<span data-ng-bind="user.firstName">
+				 </span data-ng-bind="user.lastName">
+				 <span></span></a></h2>
+			<button ui-sref="updateUser({userId: '{[{user._id}]}'})">Update</button>
+		</li>
+	</ul>
+
+	
+</section>

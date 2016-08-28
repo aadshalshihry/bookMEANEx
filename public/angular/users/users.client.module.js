@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('users', []);
+angular.module('users', ['ui.router','ngResource']);

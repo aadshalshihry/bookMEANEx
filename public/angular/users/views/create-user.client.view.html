@@ -1,0 +1,28 @@
+<section data-ng-controller="UsersController">
+<section data-ng-controller="UsersController">
+	<h1>New User:</h1>
+	<form class="form-signin" data-ng-submit=create()>
+		<label for="firstName" class="sr-only">Email address</label>
+		<input type="text" data-ng-model="firstName" name="firstName" id="firstName" class="form-control" placeholder="First Name" required autofocus>
+		
+		<label for="lastName" class="sr-only">Email address</label>
+		<input type="text" data-ng-model="lastName" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required autofocus>
+		
+		<label for="email" class="sr-only">Email address</label>
+		<input type="email" data-ng-model="email" name="email" id="email" class="form-control" placeholder="Email" required autofocus>
+
+		<label for="userName" class="sr-only">Email address</label>
+		<input type="userName" data-ng-model="username" name="username" id="userName" class="form-control" placeholder="UserName" required autofocus>
+
+		<label for="password" class="sr-only">Password</label>
+		<input type="password" data-ng-model="password" name="password" id="password" class="form-control" placeholder="Password" required>
+
+		<div class="checkbox">
+		  <label>
+		    <input type="checkbox" data-ng-model="admin" value="admin"> Admin
+		  </label>
+		  
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	</form>
+</section>

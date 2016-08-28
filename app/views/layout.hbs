@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="web1">
+<html ng-app="users">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
@@ -16,6 +16,7 @@
         {{else}}
           <li><a href="/login">Login</a></li>
           <li><a href="/signup">Sign Up</a></li>
+
         {{/if}}
       </ul>
       {{# if user.admin}}
@@ -25,8 +26,10 @@
     </div>
 
 
-  <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+  
+  <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+  
   <script type="text/javascript" src="/lib/angular/angular.js"></script>
   <script type="text/javascript" src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
   <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
@@ -38,7 +41,7 @@
   <script type="text/javascript" src="/angular/users/config/users.client.routes.js"></script>
 
 
-  <script type="text/javascript" src="/angular/application.js"></script>
+{{!--   // <script type="text/javascript" src="/angular/application.js"></script> --}}
 
 
 

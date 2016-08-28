@@ -9,6 +9,6 @@ mainAppModule.config(['$locationProvider',function($locationProvider) {
 }]);
 
 //Manually bootstap the Angularjs application
-angular.element(document).ready(function () {
-    angular.bootstrap(document, [mainAppModuleName]);
-});
+// angular.element(document).ready(function () {
+//     angular.bootstrap(document, [mainAppModuleName]);
+// });

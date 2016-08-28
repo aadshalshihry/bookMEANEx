@@ -7,19 +7,30 @@ config(function($interpolateProvider, $urlRouterProvider, $stateProvider, $locat
 	$locationProvider.html5Mode(true);
 
 	$stateProvider
-		.state('home', {
-			url: '/',
-			templateUrl: '/angular/home.html',
-			controller: 'articlesCtrl',
-			views: {
-
-			}
+		.state('newUser', {
+			url: '/users/post',
+			templateUrl: '/angular/users/views/create-user.client.view.html',
+			controller: 'UsersController',
+			controllerAs: 'UsersCtrl'
 		})
-		.state('articles', {
-			url: '/a',
-			templateUrl: '/angular/a.html',
-			controller: 'articlesCtrl'
-		});
+		.state('getUsers', {
+			url: '/users/get',
+			templateUrl: '/angular/users/views/get-users.client.view.html',
+			controller: 'UsersController',
+			controllerAs: 'UsersCtrl',
+		})
+		.state('updateUser', {
+			url: '/users/put/update/:userId',
+			templateUrl: '/angular/users/views/update-user.client.view.html',
+			controller: 'UsersController',
+			controllerAs: 'UsersCtrl'
+		})
+		.state('getUser', {
+			url: '/users/get/:userId',
+			templateUrl: '/angular/users/views/get-user.client.view.html',
+			controller: 'UsersController',
+			controllerAs: 'UsersCtrl'
+		})
 
 	$urlRouterProvider.otherwise('/');
 });
