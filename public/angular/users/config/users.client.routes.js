@@ -25,6 +25,11 @@ config(function($interpolateProvider, $urlRouterProvider, $stateProvider, $locat
 			controller: 'UsersController',
 			controllerAs: 'UsersCtrl'
 		})
+		.state('deleteUser', {
+			url: '/users/delete/:userId',
+			controller: 'UsersController',
+			controllerAs: 'UsersCtrl'
+		})
 		.state('getUser', {
 			url: '/users/get/:userId',
 			templateUrl: '/angular/users/views/get-user.client.view.html',

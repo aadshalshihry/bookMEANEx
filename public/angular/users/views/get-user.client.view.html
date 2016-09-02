@@ -1,5 +1,12 @@
 <section data-ng-controller="UsersController" data-ng-init="findOne()">
-	<h1>User: {[{user.firstName}]} {[{user.lastName}]}</h1>
+	<h3>User: {[{user.firstName}]} {[{user.lastName}]}</h3>
+	<p>{[{ client_user }]}</p>
+		<div ng-show="client_user.admin">
+			<button ui-sref="updateUser({ userId: client_user._id })">Update</button>
+			<button ng-click="delete(client_user)">delete</button>
+		</div>
+	
+
 
 	
 </section>

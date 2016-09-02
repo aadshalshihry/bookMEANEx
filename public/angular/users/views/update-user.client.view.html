@@ -1,25 +1,25 @@
-<section data-ng-controller="UsersController" ng-init="findOne()">
+<section data-ng-controller="UsersController" data-ng-init="findOne()">
 	<h1>Update User:</h1>
-	user: {[{user}]}
+	client_user: {[{client_user}]}
 	<form class="form-signin" data-ng-submit=update()>
 		<label for="firstName" class="sr-only">Email address</label>
-		<input type="text" data-ng-model="user.firstName" name="firstName" id="firstName" class="form-control" placeholder="First Name" required autofocus>
+		<input type="text" data-ng-model="client_user.firstName" name="firstName" id="firstName" class="form-control" placeholder="First Name" required autofocus>
 		
 		<label for="lastName" class="sr-only">Email address</label>
-		<input type="text" data-ng-model="user.lastName" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required autofocus>
+		<input type="text" data-ng-model="client_user.lastName" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required autofocus>
 		
 		<label for="email" class="sr-only">Email address</label>
-		<input type="email" data-ng-model="user.email" name="email" id="email" class="form-control" placeholder="Email" required autofocus>
+		<input type="email" data-ng-model="client_user.email" name="email" id="email" class="form-control" placeholder="Email" required autofocus>
 
 		<label for="userName" class="sr-only">Email address</label>
-		<input type="userName" data-ng-model="user.username" name="username" id="userName" class="form-control" placeholder="UserName" required autofocus>
+		<input type="userName" data-ng-model="client_user.username" name="username" id="userName" class="form-control" placeholder="UserName" required autofocus>
 
 		<div class="checkbox">
 		  <label>
-		    <input type="checkbox" data-ng-model="admin" value="admin"> Admin
+		    <input type="checkbox" data-ng-model="client_user.admin" value="admin"> Admin
 		  </label>
 		  
 		</div>
-		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Update">Sign in</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Update">Update</button>
 	</form>
 </section>

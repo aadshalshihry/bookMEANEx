@@ -2,9 +2,10 @@
 
 angular.module('users')
 	.controller('UsersController', ['$scope', '$stateParams', '$state', 'Users', function($scope, $stateParams, $state, Users) {
-		
+		$scope.client_user = {};
+
 		$scope.create = function() {
-			var user = new Users({
+			var client_user = new Users({
 				firstName: this.firstName,
 				lastName: this.lastName,
 				email: this.email,
@@ -12,9 +13,9 @@ angular.module('users')
 				password: this.password,
 				admin: this.admin
 			});
-			user.$save(function(response) {
+			client_user.$save(function(response) {
 				$state.go('getUser', {
-					userId: user._id,
+					userId: client_user._id,
 					redirect: true
 				});
 			}, function(errorResponse) {
@@ -24,14 +25,15 @@ angular.module('users')
 		};
 
 		$scope.find = function() {
-			$scope.users = Users.query();
+			$scope.client_users = Users.query();
 		};
 
 		$scope.findOne = function() {
 			// Use the user 'get' method to send an appropriate GET request
-			$scope.user = Users.get({
+			$scope.client_user = Users.get({
 				userId: $stateParams.userId
 			});
+			console.log("**", $scope);
 		};
 
 
@@ -40,7 +42,7 @@ angular.module('users')
 		$scope.update = function() {
 			// Use the user '$update' method to send an appropriate PUT request
 
-			$scope.user.$update(function() {
+			$scope.client_user.$update(function() {
 				// If an user was updated successfully, redirect the user to the user's page
 				$state.go('getUser', {
 					userId: $stateParams.userId,
@@ -53,23 +55,14 @@ angular.module('users')
 		};
 
 		// Create a new controller method for deleting a single user
-		$scope.delete = function(user) {
+		$scope.delete = function(client_user) {
 			// If an user was sent to the method, delete it
-			if (user) {
-				// Use the user '$remove' method to delete the user
-				user.$remove(function() {
-					// Remove the user from the articles list
-					for (var i in $scope.articles) {
-						if ($scope.articles[i] === user) {
-							$scope.articles.splice(i, 1);
-						}
-					}
+
+			client_user.$remove(function() {
+				$state.go('getUsers', {
+
+					redirect: true
 				});
-			} else {
-				// Otherwise, use the user '$remove' method to delete the user
-				$scope.user.$remove(function() {
-					$location.path('users');
-				});
-			}
+			});
 		};
 	}]);
